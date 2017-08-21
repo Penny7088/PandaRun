@@ -1,26 +1,26 @@
 var res = {
-    HelloWorld_png : "res/HelloWorld.png",
+    HelloWorld_png: "res/HelloWorld.png",
 
     //open
-    open:{
-        bg:'res/open-bg.png',
-        team:'res/maxon-team.png'
+    open: {
+        bg: 'res/open-bg.png',
+        team: 'res/maxon-team.png'
     },
 
     //mode type img
-    mode:{
+    mode: {
         board: 'res/mode-board.png',
         mode1: 'res/mode1.png',
         mode2: 'res/mode2.png'
     },
 
     //user info img
-    info:{
+    info: {
         board: 'res/info-board.png',
         done: 'res/done.png'
     },
 
-    rank:{
+    rank: {
         board: 'res/rank-board.png'
     },
 
@@ -46,7 +46,7 @@ var res = {
         disable: 'res/disable.png'
     },
 
-    panda : {
+    panda: {
         plist: 'res/panda.plist',
         png: 'res/panda.png'
     },
@@ -57,10 +57,10 @@ var res = {
     },
 
     // Background
-    background: [
-        'res/far-bg.png',
-        'res/near-bg.png'
-    ],
+    background: {
+        bg1: 'res/far-bg.png',
+        bg2: 'res/near-bg.png'
+    },
 
     // gold
     gold: {
@@ -75,7 +75,7 @@ var res = {
     },
 
     //bird
-    bird : {
+    bird: {
         png: 'res/bird.png',
         plist: 'res/bird.plist'
     },
@@ -125,7 +125,7 @@ var res = {
     },
 
     // Sound Effect
-    sound:{
+    sound: {
         bg_mp3: 'res/sound/bg.mp3',
         jump_mp3: 'res/sound/jump.mp3',
         gold_mp3: 'res/sound/eat_gold.mp3',
@@ -172,8 +172,8 @@ var res = {
 };
 
 var SpriteTag = {
-    player : 0,
-    gold : 1,
+    player: 0,
+    gold: 1,
     inventory: 2,
     platform: 3,
     ground: 4,
@@ -199,18 +199,18 @@ var canAudioPlaying = 0;
 var diffDeg = 0;
 var isMusicPlaying = 0;
 
-var localStorage = sys ? sys.localStorage : window.localStorage;
-if(!localStorage.getItem("canAudioPlaying") || !localStorage.getItem("canMusicPlaying")) {
+var localStorage = cc.sys ? cc.sys.localStorage : window.localStorage;
+if (!localStorage.getItem("canAudioPlaying") || !localStorage.getItem("canMusicPlaying")) {
     localStorage.setItem("canMusicPlaying", 1);
     localStorage.setItem("canAudioPlaying", 1);
     localStorage.setItem("diffDeg", 0);
 }
 canMusicPlaying = parseInt(localStorage.getItem("canMusicPlaying"));
 canAudioPlaying = parseInt(localStorage.getItem("canAudioPlaying"));
-diffDeg = parseInt(sys.localStorage.getItem("diffDeg"));
+diffDeg = parseInt(cc.sys.localStorage.getItem("diffDeg"));
 
 //initialize prop to local
-if(!localStorage.getItem("magnet") || !localStorage.getItem("shoes") || !localStorage.getItem("redshoes")) {
+if (!localStorage.getItem("magnet") || !localStorage.getItem("shoes") || !localStorage.getItem("redshoes")) {
     localStorage.setItem("magnet", 0);
     localStorage.setItem("shoes", 0);
     localStorage.setItem("redshoes", 0);
