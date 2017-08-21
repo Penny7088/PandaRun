@@ -10,7 +10,8 @@
   "modules": [
     "cocos2d",
     "chipmunk",
-    "ccui"
+    "extensions",
+    "external"
   ],
   "jsList": [
     "src/resource.js",

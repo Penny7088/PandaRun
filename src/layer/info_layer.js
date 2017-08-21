@@ -21,7 +21,7 @@ var InfoLayer = cc.Layer.extend({
         this.logo.runAction(actionTo);
 
         this.board = new cc.Sprite(res.info.board);
-        this.board.setPosition(cc.p(winSize.width / 2, winSize.height));
+        this.board.setPosition(cc.p(winSize.width / 2 + 100, winSize.height - 100));
         this.addChild(this.board);
 
         var textField = new ccui.TextField();
@@ -43,7 +43,7 @@ var InfoLayer = cc.Layer.extend({
             new cc.Sprite(res.info.done),
             function () {
                 var userName = textField.getString();
-                sys.localStorage.setItem("username", userName);
+                cc.sys.localStorage.setItem("username", userName);
                 cc.director.runScene(new WelComeSence());
             }.bind(this), this));
 
