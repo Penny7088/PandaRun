@@ -19,6 +19,7 @@ var SplashScene = cc.Scene.extend({
         this.addChild(openingLayer,1,1);
         setTimeout(function () {
             var gameMenuLayer = new GameMenuLayer();
+            cc.sys.localStorage.removeItem("username");
             if(cc.sys.localStorage.getItem("username")){
                 cc.log("welcome");
                 cc.director.runScene(new WelComeSence());
